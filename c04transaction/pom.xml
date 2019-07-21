@@ -2,56 +2,62 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>l-spring-all</artifactId>
+        <groupId>com.xmustang</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.xmustang</groupId>
-    <artifactId>l-spring-all</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>c01ioc</module>
-        <module>c02aop</module>
-        <module>c03springjdbc</module>
-        <module>c04transaction</module>
-        <module>c05cache</module>
-    </modules>
-
-    <properties>
-        <spring.version>5.1.8.RELEASE</spring.version>
-    </properties>
+    <artifactId>c04transaction</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
+            <version>5.1.7.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.1.7.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13-beta-3</version>
+            <scope>test</scope>
         </dependency>
-
-
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
-            <scope>provided</scope>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>5.1.7.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.1.7.RELEASE</version>
         </dependency>
     </dependencies>
     <build>
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/main/resource</directory>
             </resource>
         </resources>
         <plugins>
+            <!-- 设置编译源代码的JDK版本 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
