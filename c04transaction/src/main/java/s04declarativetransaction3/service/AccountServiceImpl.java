@@ -9,7 +9,7 @@ import s04declarativetransaction3.dao.IAccountDao;
  * 基于XML配置声明的方式（基于注解）
  *
  * @Transactional中的的属性： <p/>
- * propagation    :事务的传播行为
+ * propagation   :事务的传播行为
  * isolation     :事务的隔离级别
  * readOnly      :只读
  * rollbackFor   :发生哪些异常回滚

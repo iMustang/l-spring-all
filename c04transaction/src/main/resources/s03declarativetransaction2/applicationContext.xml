@@ -59,7 +59,7 @@
     <!-- 配置切面 -->
     <aop:config>
         <!-- 配置切入点 -->
-        <aop:pointcut expression="execution(* com.xmustang.demo.IAccountService+.*(..))" id="pointcut1"/>
+        <aop:pointcut expression="execution(* s03declarativetransaction2.service.IAccountService+.*(..))" id="pointcut1"/>
         <!-- 配置切面 -->
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut1"/>
     </aop:config>
